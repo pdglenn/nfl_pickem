@@ -100,7 +100,6 @@ class Standings extends React.Component {
                 last_rank_points = user.points;
                 last_rank = index + 1;
             }
-
             return (
                 <UserRecord key={user.id} user={user}/>
             );

@@ -50,8 +50,11 @@ class PicksController < ApplicationController
   def standings
     @current_week = current_week
     @users = User.where.not(id: [81, 64, 65, 66]).all.to_a
-      .to_json(:methods => [:wins, :losses, :pushes, :percent, :points, :week_standings])
+      .to_json(:methods => [:wins, :losses, :pushes, :percent, :points, :week_standings, :picks_by_week])
   end
+# :picks_by_week ici
+
+  
 
   def distribution
     @distribution_hash = {}
@@ -81,6 +84,8 @@ class PicksController < ApplicationController
       end
     end
   end
+
+
 
   private
   def pick_params

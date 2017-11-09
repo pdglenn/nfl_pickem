@@ -10,7 +10,6 @@ ActiveRecord::Base.transaction do
     if pick
       if pick.winner_id != row[1].to_i
         puts 'something funky going on here!'
-        byebug
       end
     else
       Pick.create([:week => row[4], :winner_id => row[1], :user_id => row[0], :game_id => game.id])

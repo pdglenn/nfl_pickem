@@ -33,10 +33,12 @@ class Game extends React.Component {
   whoIsTheAwayTeam(away_team){
     return away_team.name
   }
+  
   getHomeLogoClass(){
   }
   getAwayLogoClass(){
   }
+
   whoIsTheAwayTeam(away_team){
     return away_team.name
   }

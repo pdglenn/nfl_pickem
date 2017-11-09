@@ -40,9 +40,6 @@ $pickem: #013369;
   top: 40px;
 }
 .card.weekly-picks-card {
-  //backup
-    // margin: 40px;
-
     margin: 20px;
     top: 60px;
 
@@ -50,7 +47,7 @@ $pickem: #013369;
       padding: 0px;
       border: 2px;
       border-color: black !important;
-      font-size: 15px !important;
+      // font-size: 15px !important;
 
         .homeSpead_th{
           white-space: nowrap;
@@ -70,24 +67,26 @@ $pickem: #013369;
             }
         }
         tr{
-          font-size: 15px;
-          @media screen and (max-width: 864px) {
-            font-size: 10px;
-          }
-          @media screen and (max-width: 660px) {
-            font-size: 8px !important;
-          }
+          font-size: 16px;
+          // font-size: 15px;
+          // @media screen and (max-width: 864px) {
+          //   font-size: 10px;
+          // }
+          // @media screen and (max-width: 660px) {
+          //   font-size: 8px !important;
+          // }
         }
         td {
-          font-size: 15px;
+          font-size: 16px;
+          // font-size: 15px;
           border-radius: 0px !important;
           @media screen and (max-width: 864px) {
-            font-size: 10px;
+            // font-size: 10px;
             padding: 5px;
           }
           @media screen and (max-width: 660px) {
 
-            font-size: 8px !important;
+            // font-size: 8px !important;
             white-space: none !important;
             padding: 0;
           }
@@ -130,7 +129,7 @@ $pickem: #013369;
       color: red;
     }
     .datePretty{
-      font-size: 15px;
+      // font-size: 15px;
         @media screen and (min-width: 1085px) {
                white-space: none !important;
         }

@@ -1,3 +1,4 @@
+
 class User < ApplicationRecord
   has_many :picks, dependent: :destroy
 
@@ -61,30 +62,37 @@ class User < ApplicationRecord
     week = Game.get_week
     week_standings = Hash.new
     weekly_picks = picks.group(:week).group(:result).count.sort_by {|k, v| v}.reverse.to_h
-    week.downto(1).each do |this_week|
-      week_wins = weekly_picks[[this_week, "win"]] ||= 0
-      week_pushes = weekly_picks[[this_week, "push"]] ||= 0
-      week_losses = weekly_picks[[this_week, "loss"]] ||= 0
-      week_points = week_wins + (week_pushes * 0.5)
-      total = week_wins + week_losses + week_pushes
-      percent = total > 0 ? (week_points  / total * 100).round : 0
+      week.downto(1).each do |this_week|
+        week_wins = weekly_picks[[this_week, "win"]] ||= 0
+        week_pushes = weekly_picks[[this_week, "push"]] ||= 0
+        week_losses = weekly_picks[[this_week, "loss"]] ||= 0
+        week_points = week_wins + (week_pushes * 0.5)
+        total = week_wins + week_losses + week_pushes
+        percent = total > 0 ? (week_points  / total * 100).round : 0
 
-      week_standings[this_week] = {
-        :wins => week_wins,
-        :pushes => week_pushes,
-        :losses => week_losses,
-        :points => week_points,
-        :percent => percent
-      }
-    end
+        week_standings[this_week] = {
+          :wins => week_wins,
+          :pushes => week_pushes,
+          :losses => week_losses,
+          :points => week_points,
+          :percent => percent
+        }
+      end
 
     percentage_all = picks.count > 0 ? (points / picks.count * 100).round : 0
     week_standings[:all] = {
       wins: wins,
       pushes: pushes,
-      points: points, 
+      points: points,
       percent: percentage_all}
     week_standings
+  end
+
+# :picks_by_week ici
+  def picks_by_week
+    weekly_picks = Hash[*picks.all.map{|x,y| {x.week => x.winner_id}}].flatten.flat_map(&:entries).group_by(&:first).map{|k,v| Hash[k, v.map(&:last)]}.reduce Hash.new, :merge
+    weekly_picks
+    puts weekly_picks
   end
 
   def get_picks_summary(week)
