@@ -1,0 +1,145 @@
+$teal: rgb(68,150,139);
+$break-small: 320px;
+$break-large: 1200px;
+$pickem: #013369;
+
+.distribution-card {
+  top: 40px;
+}
+#picks{
+  padding: 0px !important;
+}
+.card.weekly-picks-card {
+    //margin: 20px;
+    top: 150px;
+    z-index: 7
+}
+.card.title-card {
+    //margin: 20px;
+    top: 70px;
+    z-index: 10;
+}
+.title-table{
+  z-index: 9;
+}
+.card-content {
+  //border: 2px;
+  border-color: black !important;
+  font-size: 15px !important;
+  top: 30px;
+}
+.homeSpead_th{
+  white-space: nowrap;
+}
+.title-row {
+    border-bottom: 1px solid lightgray;
+    height: 65px;
+    margin-bottom: 0px;
+    border-radius: 0px !important;
+    white-space: nowrap;
+    text-align: center;
+    vertical-align: middle;
+  }
+  .tableHeader{
+    border-bottom: 1px solid lightgray;
+  }
+  .tableHeader span{
+    padding-right: 50px;
+    text-align: center;
+    width: 20px;
+  }
+  .card-title {
+      // margin: 20px;
+      // border-bottom: 1px solid #d0d0d0;
+      // top: 10px;
+      // height: 30px;
+  }
+
+  #GameTable{
+    top:100px;
+  }
+  td {
+    font-size: 16px;
+    border-radius: 0px !important;
+  }
+
+
+    .pick-active {
+        background: rgb(232,232,232); //grey
+    }
+    .pickWin {
+      border-width: 2px;
+      border-top: 5px;
+      color: green !important;
+    }
+    .team-selected {
+        color: $teal;
+        font-weight: 600;
+        border: 5px;
+    }
+    .select-team {
+        cursor: pointer;
+        white-space: nowrap;
+        text-align: center !important;
+    }
+    .game-icon {
+        font-size: 30px;
+        top: 2px;
+        position: relative;
+        margin-left: 10px;
+    }
+    .pick-win .game-icon {
+        color: #4caf50;
+    }
+
+    .pick-loss .game-icon {
+        color: #e53935;
+    }
+    .datePretty{
+      // font-size: 15px;
+        @media screen and (min-width: 1085px) {
+               white-space: none !important;
+        }
+        @media screen and (max-width: 660px) {
+               font-size: 10px !important;
+               white-space: none !important;
+        }
+    }
+    .logos {
+      height: 90px;
+      display: block;
+      margin: 0 auto;
+      @media screen and (max-width: 660px) {
+             // font-size: 10px !important;
+             padding-right: 5px;
+      }
+    }
+    #homeSpread{
+      text-align: center;
+
+    }
+    .score {
+      text-align: center;
+      white-space: nowrap;
+      height: 10px;
+
+    }
+    #awayLogo{
+      padding-left: 40px;
+      padding-right: 10px;
+    }
+    #homeLogo{
+      padding-left: 40px;
+      padding-right: 10px;
+    }
+
+    .scoreTitle {
+      text-align: center;
+      white-space: nowrap;
+    }
+    .score{
+      font-size: 20px !important;
+    }
+    .blankColumn{
+      width: 30px;
+    }

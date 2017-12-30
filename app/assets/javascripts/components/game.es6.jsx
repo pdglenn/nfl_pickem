@@ -11,32 +11,33 @@ class Game extends React.Component {
         var awayLogo = this.props.game.awayLogo;
 
         return (
-          // <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-            <tr className={this.getGamePickedClass()} onClick={this.handlePickSelect.bind(this)}>
-                <td><i className="game-icon material-icons">{this.getIcon()}</i></td>
-                <td id='homeSpread' className={this.getTeamSelectedClass(home_team.id)}> {this.getSpreadPretty(true)} </td>
-                <td id="homeLogo" className={this.getHomeLogoClass(true)}>
-              <img src={home_team.logo_path} className="logos" />
-                </td>
-                <td className={this.getTeamSelectedClass(home_team.id) + " select-team"} data-team-id={home_team.id}> {home_team.name} ({home_team.wins}-{home_team.losses}) </td>
-                <td className="score">{this.getScorePretty()}</td>
-                <td id="awayLogo" className={this.getAwayLogoClass(true)}>
-              <img src={away_team.logo_path} className="logos" />
-                </td>
-                <td className={this.getTeamSelectedClass(away_team.id) + " select-team"} data-team-id={away_team.id}> {away_team.name} ({away_team.wins}-{away_team.losses}) </td>
-                <td className="datePretty"> {this.getDatePretty()} </td>
-            </tr>
+          <tr className={this.getGamePickedClass()} onClick={this.handlePickSelect.bind(this)}>
+              <td><i className="game-icon material-icons">{this.getIcon()}</i></td>
+              <td id="awayTeam" className={this.getTeamSelectedClass(away_team.id) + " select-team"} data-team-id={away_team.id}>
+                <img src={away_team.logo_path} className="logos" />
+                 {away_team.name} ({away_team.wins}-{away_team.losses})
+               </td>
+               {/* <td><a>t</a></td> */}
+              <td className="score">{this.getScorePretty()}</td>
+              <td id="homeTeam" className={this.getTeamSelectedClass(home_team.id) + " select-team"} data-team-id={home_team.id}>
+                  <img src={home_team.logo_path} className="logos" />
+                 {home_team.name} ({home_team.wins}-{home_team.losses})
+              </td>
+              {/* <td><a data-target="modaxxl1" class="btn modal-trigger">t</a></td> */}
+              <td id='homeSpread' className={this.getTeamSelectedClass(home_team.id)}> {this.getSpreadPretty(true)} </td>
+              <td className="datePretty"> {this.getDatePretty()} </td>
+          </tr>
         );
     }
 
-///arthur
+  componentDidMount() {
+      $(document).ready(function(){
+        $('.modal').modal();
+      });
+  }
+
   whoIsTheAwayTeam(away_team){
     return away_team.name
-  }
-  
-  getHomeLogoClass(){
-  }
-  getAwayLogoClass(){
   }
 
   whoIsTheAwayTeam(away_team){
@@ -45,8 +46,11 @@ class Game extends React.Component {
   getScorePretty () {
     var homeScore = this.props.game.home_team_score;
     var awayScore = this.props.game.away_team_score;
+
     if (homeScore || awayScore || homeScore === 0 || awayScore === 0) {
       return homeScore + " - " + awayScore
+    }else{
+      return "@"
     }
   }
   getSpreadPretty (home) {

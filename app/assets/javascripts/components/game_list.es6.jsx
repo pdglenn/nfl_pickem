@@ -4,7 +4,11 @@ class GameList extends React.Component {
         this.state = {picks: props.picks, games: props.games, week: props.week};
     }
 
-
+    componentDidMount() {
+        $(document).ready(function(){
+          $('.modal').modal();
+        });
+    }
 
     addNewPick (new_pick) {
         // TODO: make this not hacky af
@@ -103,32 +107,28 @@ class GameList extends React.Component {
         });
 
         return (
-            <div className="card weekly-picks-card">
-                <div className="card-content">
-                    <div className="row title-row">
-                        <span className="card-title">Week {this.props.week} Picks</span>
-                    </div>
-
-
-
-                    <table className="bordered highlight">
-                        <tbody>
-                            <tr>
-                                <th data-id="locked"></th>
-                                <th className="homeSpead_th">Home Spread</th>
-                                  <th id='homeLogo'></th>
-                                <th>Home Team</th>
-                                <th className="scoreTitle">Score</th>
-                                  <th id='awayLogo'></th>
-                                <th>Visiting Team</th>
-                                <th>Status</th>
-                            </tr>
-                            {gameNodes}
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
+          <div className="card weekly-picks-card pinned">
+                  <div className="title-row">
+                      <span className="heading h1">Week {this.props.week} Picks</span>
+                  </div>
+                  <div className="card-content">
+                  <table className="bordered highlight">
+                    <thead>
+                      <tr className="columnNames">
+                          <th data-id="locked"></th>
+                          <th>Visiting Team</th>
+                            <th className="scoreTitle">Score</th>
+                          <th>Home Team</th>
+                          <th className="homeSpead_th">Home Spread</th>
+                          <th>Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                          {gameNodes}
+                      </tbody>
+                  </table>
+              </div>
+          </div>
         );
     }
 

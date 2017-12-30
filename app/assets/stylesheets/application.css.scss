@@ -25,7 +25,7 @@ $pickem2: #000080;
 $teal: rgb(68,150,139);
 //#013369
 body{
-  background-position: white;
+  // background-position: white;
 }
 nav {
     background-color: #000080;
@@ -79,16 +79,9 @@ nav {
             margin-left: 10px;
             position: relative;
             top: -6px;
-            // @media screen and (max-width: 600px) {
-            //     display: none;
-            //     visibility: hidden;
-            //    }
             @media screen and (max-width: 800px) {
                font-size: 10px !important;
               }
-        }
-        .material-icons{
-          // size: 60px;
         }
     }
 
@@ -99,10 +92,6 @@ nav {
                  font-size: 20px !important;
         }
       }
-//-------- Hide SideBar if window is smaller than 600px --------
-      // @media screen and (min-width: 740px) {
-      //          visibility: hidden;
-      // }
   }
 
   nav {

@@ -88,12 +88,13 @@ class User < ApplicationRecord
     week_standings
   end
 
+##latest attempt at picks per week by each user.
 # :picks_by_week ici
-  def picks_by_week
-    weekly_picks = Hash[*picks.all.map{|x,y| {x.week => x.winner_id}}].flatten.flat_map(&:entries).group_by(&:first).map{|k,v| Hash[k, v.map(&:last)]}.reduce Hash.new, :merge
-    weekly_picks
-    puts weekly_picks
-  end
+  #def picks_by_week
+  #  weekly_picks = Hash[*picks.all.map{|x,y| {x.week => x.winner_id}}].flatten.flat_map(&:entries).group_by(&:first).map{|k,v| Hash[k, v.map(&:last)]}.reduce Hash.new, :merge
+  #  weekly_picks
+  #  puts weekly_picks
+  #end
 
   def get_picks_summary(week)
     weekly_picks = picks.where(:week => week)

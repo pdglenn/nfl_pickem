@@ -2,8 +2,16 @@ $teal: rgb(68,150,139);
 $break-small: 320px;
 $break-large: 1200px;
 $pickem: #013369;
+
+$iphone-portrait: 320px;
+$iphone-landscape: 480px;
+$ipad-portrait: 768px;
+$ipad-landscape: 1024px;
+$desktop: 1224px;
+$desktop-large: 1824px;
+
 .logos {
-  height: 25px;
+  height: 60px;
   display: block;
   margin: 0 auto;
   @media screen and (max-width: 660px) {
@@ -11,28 +19,22 @@ $pickem: #013369;
          padding-right: 5px;
   }
 }
-
 #homeSpread{
   text-align: center;
-
 }
 .score {
   text-align: center;
   white-space: nowrap;
   height: 10px;
-
 }
 #awayLogo{
   padding-left: 20px;
 }
-
 .scoreTitle {
   // padding-left: 8px;
   text-align: center;
   white-space: nowrap;
-
 }
-
 .blankColumn{
   width: 30px;
 }
@@ -42,101 +44,158 @@ $pickem: #013369;
 .card.weekly-picks-card {
     margin: 20px;
     top: 60px;
-
-    .card-content {
-      padding: 0px;
-      border: 2px;
-      border-color: black !important;
-      // font-size: 15px !important;
-
-        .homeSpead_th{
-          white-space: nowrap;
-        }
-        .title-row {
-            border-bottom: 1px solid lightgray;
-            height: 65px;
-            margin-bottom: 0px;
-            border-radius: 0px !important;
-            white-space: nowrap;
-
-            .card-title {
-                margin: 20px;
-                position: relative;
-                top: 10px;
-                height: 30px;
-            }
-        }
-        tr{
-          font-size: 16px;
-          // font-size: 15px;
-          // @media screen and (max-width: 864px) {
-          //   font-size: 10px;
-          // }
-          // @media screen and (max-width: 660px) {
-          //   font-size: 8px !important;
-          // }
-        }
-        td {
-          font-size: 16px;
-          // font-size: 15px;
-          border-radius: 0px !important;
-          @media screen and (max-width: 864px) {
-            // font-size: 10px;
-            padding: 5px;
-          }
-          @media screen and (max-width: 660px) {
-
-            // font-size: 8px !important;
-            white-space: none !important;
-            padding: 0;
-          }
-        }
+    width: 
+}
+.card-content {
+  padding: 0px !important;
+  border: 2px;
+  border-color: black !important;
+  overflow-y: scroll;
+}
+.card-title {
+    // margin: 20px;
+    border-bottom: 1px solid #d0d0d0;
+    // top: 10px;
+    font-size: 20px;
+    height: 30px;
+    white-space: nowrap;
+  }
+  .homeSpead_th{
+    white-space: nowrap;
+  }
+  .title-row {
+      border-bottom: 1px solid lightgray;
+      height: 65px;
+      margin-bottom: 0px;
+      border-radius: 0px !important;
+      white-space: nowrap;
+      font-size: 30px;
+      padding-left: 20px;
+      padding-top: 16px;
+  }
+  div.weekNumber {
+      margin: 20px !important;
+      position: fixed !important;
+      height: 30px !important;
+      text-align: left !important;
+      font-size: 30px !important;
+  }
+  .titleHeader{
+    font-size: 20px !important;
+  }
+tbody{
+  display:block;
+  height: 33em;
+  overflow:auto;
+  @media only screen //iphone portrait
+  and (device-width: 375px)
+  and (device-height : 667px)
+  and (-webkit-device-pixel-ratio : 2) {
+      height: 98em;
+  }
+  @media only screen //iphone landscape
+  and (device-width: 667px)
+  and (device-height : 375px)
+  and (-webkit-device-pixel-ratio : 2) {
+      height: 24em;
+  }
+  @media only screen //desktop laptop
+  and (device-width: 667px)
+  and (device-height : 375px)
+  and (-webkit-device-pixel-ratio : 2) {
+      height: 24em;
+  }
+  @media only screen
+  //desktop laptop fullscreen
+  //height > 678
+  and (min-height: 678px) {
+      height: 33em;
+  }
+  @media only screen //desktop height > 1000px
+  and (min-height: 1000px) {
+      height: 56em;
+  }
+  @media only screen //desktop height > 1000px
+  and (min-width: 378px)
+  and (min-height: 1150px) {
+      height:69em;
+  }
+}
+thead, tbody tr {
+    display:table;
+    width:100%;
+    table-layout:fixed;
+    font-size: 15px;
+    @media screen and (max-width: 864px) {
+      font-size: 10px;
     }
-
-    .pick-active {
-        background: rgb(232,232,232); //grey
+    @media screen and (max-width: 660px) {
+      font-size: 8px !important;
     }
-    .pickWin {
-      border-width: 2px;
-      border-top: 5px;
-      color: green !important;
+}
+thead {
+    width: calc( 100% - 1em )
+}
+table {
+    width:100%;
+    // height: 5em !important;
+}
+th{
+  text-align: center !important;
+}
+td {
+  font-size: 15px;
+  border-radius: 0px !important;
+  @media screen and (max-width: 864px) {
+    font-size: 10px;
+    padding: 5px;
+  }
+  @media screen and (max-width: 660px) {
+    font-size: 8px !important;
+    white-space: none !important;
+    padding: 0;
+  }
+}
+.pick-active {
+    background: rgb(232,232,232); //grey
+}
+.pickWin {
+  border-width: 2px;
+  border-top: 5px;
+  color: green !important;
+}
+.team-selected {
+    color: $teal;
+    font-weight: 600;
+    border: 5px;
+}
+.select-team {
+    cursor: pointer;
+    white-space: nowrap;
+    text-align: center;
+}
+.game-icon {
+    font-size: 18px;
+    top: 2px;
+    position: relative;
+    margin-left: 10px;
+}
+.pick-win .game-icon {
+    color: #4caf50;
+}
+.pick-loss .game-icon {
+    color: #e53935;
+}
+#hidden10{
+  color: red;
+}
+.datePretty{
+  // font-size: 2rem;
+    @media screen and (min-width: 1085px) {
+           white-space: none !important;
     }
-    .team-selected {
-        color: $teal;
-        font-weight: 600;
-        border: 5px;
+    @media screen and (max-width: 660px) {
+           // font-size: 10px !important;
+           white-space: none !important;
     }
-    .select-team {
-        cursor: pointer;
-        white-space: nowrap;
-        text-align: left;
-    }
-    .game-icon {
-        font-size: 18px;
-        top: 2px;
-        position: relative;
-        margin-left: 10px;
-    }
-
-    .pick-win .game-icon {
-        color: #4caf50;
-    }
-
-    .pick-loss .game-icon {
-        color: #e53935;
-    }
-    #hidden10{
-      color: red;
-    }
-    .datePretty{
-      // font-size: 15px;
-        @media screen and (min-width: 1085px) {
-               white-space: none !important;
-        }
-        @media screen and (max-width: 660px) {
-               font-size: 10px !important;
-               white-space: none !important;
-        }
-    }
-
 }
