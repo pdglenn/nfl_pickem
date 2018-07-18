@@ -5,9 +5,6 @@ class GameList extends React.Component {
     }
 
     componentDidMount() {
-        $(document).ready(function(){
-          $('.modal').modal();
-        });
     }
 
     addNewPick (new_pick) {
@@ -110,10 +107,22 @@ class GameList extends React.Component {
           <div className="card weekly-picks-card pinned">
                   <div className="title-row">
                       <span className="heading h1">Week {this.props.week} Picks</span>
+                      <br/>
+                      <table>
+                        <tbody id="tableHeader">
+                          <th className="titleHeader"></th>
+                          <th className="titleHeader">Visitor Team</th>
+                          <th className="titleHeader">Score</th>
+                          <th className="titleHeader">Home Team</th>
+                          <th className="titleHeader">Home Spread</th>
+                          <th className="titleHeader">Status</th>
+                        </tbody>
+                      </table>
+
                   </div>
                   <div className="card-content">
                   <table className="bordered highlight">
-                    <thead>
+                    {/* <thead>
                       <tr className="columnNames">
                           <th data-id="locked"></th>
                           <th>Visiting Team</th>
@@ -122,8 +131,8 @@ class GameList extends React.Component {
                           <th className="homeSpead_th">Home Spread</th>
                           <th>Status</th>
                       </tr>
-                    </thead>
-                    <tbody>
+                    </thead> */}
+                    <tbody id="tableBody">
                           {gameNodes}
                       </tbody>
                   </table>

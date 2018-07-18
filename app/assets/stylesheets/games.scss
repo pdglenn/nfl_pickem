@@ -44,7 +44,6 @@ $desktop-large: 1824px;
 .card.weekly-picks-card {
     margin: 20px;
     top: 60px;
-    width: 
 }
 .card-content {
   padding: 0px !important;
@@ -65,13 +64,13 @@ $desktop-large: 1824px;
   }
   .title-row {
       border-bottom: 1px solid lightgray;
-      height: 65px;
       margin-bottom: 0px;
       border-radius: 0px !important;
       white-space: nowrap;
       font-size: 30px;
       padding-left: 20px;
       padding-top: 16px;
+
   }
   div.weekNumber {
       margin: 20px !important;
@@ -82,44 +81,50 @@ $desktop-large: 1824px;
   }
   .titleHeader{
     font-size: 20px !important;
+    width: 20px !important;
+    text-align: center !important;
+    margin-left: 20px;
   }
-tbody{
+#tableHeader{
+
+}
+#tableBody{
   display:block;
-  height: 33em;
+  height: 75vh;
   overflow:auto;
-  @media only screen //iphone portrait
-  and (device-width: 375px)
-  and (device-height : 667px)
-  and (-webkit-device-pixel-ratio : 2) {
-      height: 98em;
-  }
-  @media only screen //iphone landscape
-  and (device-width: 667px)
-  and (device-height : 375px)
-  and (-webkit-device-pixel-ratio : 2) {
-      height: 24em;
-  }
-  @media only screen //desktop laptop
-  and (device-width: 667px)
-  and (device-height : 375px)
-  and (-webkit-device-pixel-ratio : 2) {
-      height: 24em;
-  }
-  @media only screen
-  //desktop laptop fullscreen
-  //height > 678
-  and (min-height: 678px) {
-      height: 33em;
-  }
-  @media only screen //desktop height > 1000px
-  and (min-height: 1000px) {
-      height: 56em;
-  }
-  @media only screen //desktop height > 1000px
-  and (min-width: 378px)
-  and (min-height: 1150px) {
-      height:69em;
-  }
+  // @media only screen //iphone portrait
+  // and (device-width: 375px)
+  // and (device-height : 667px)
+  // and (-webkit-device-pixel-ratio : 2) {
+  //     height: 98em;
+  // }
+  // @media only screen //iphone landscape
+  // and (device-width: 667px)
+  // and (device-height : 375px)
+  // and (-webkit-device-pixel-ratio : 2) {
+  //     height: 24em;
+  // }
+  // @media only screen //desktop laptop
+  // and (device-width: 667px)
+  // and (device-height : 375px)
+  // and (-webkit-device-pixel-ratio : 2) {
+  //     height: 24em;
+  // }
+  // @media only screen
+  // //desktop laptop fullscreen
+  // //height > 678
+  // and (min-height: 678px) {
+  //     height: 33em;
+  // }
+  // @media only screen //desktop height > 1000px
+  // and (min-height: 1000px) {
+  //     height: 56em;
+  // }
+  // @media only screen //desktop height > 1000px
+  // and (min-width: 378px)
+  // and (min-height: 1150px) {
+  //     height:69em;
+  // }
 }
 thead, tbody tr {
     display:table;
@@ -146,15 +151,15 @@ th{
 td {
   font-size: 15px;
   border-radius: 0px !important;
-  @media screen and (max-width: 864px) {
-    font-size: 10px;
-    padding: 5px;
-  }
-  @media screen and (max-width: 660px) {
-    font-size: 8px !important;
-    white-space: none !important;
-    padding: 0;
-  }
+  // @media screen and (max-width: 864px) {
+  //   font-size: 10px;
+  //   padding: 5px;
+  // }
+  // @media screen and (max-width: 660px) {
+  //   font-size: 8px !important;
+  //   // white-space: none !important;
+  //   padding: 0;
+  // }
 }
 .pick-active {
     background: rgb(232,232,232); //grey
@@ -171,7 +176,7 @@ td {
 }
 .select-team {
     cursor: pointer;
-    white-space: nowrap;
+    // white-space: nowrap;
     text-align: center;
 }
 .game-icon {

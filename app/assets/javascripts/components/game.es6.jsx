@@ -31,9 +31,6 @@ class Game extends React.Component {
     }
 
   componentDidMount() {
-      $(document).ready(function(){
-        $('.modal').modal();
-      });
   }
 
   whoIsTheAwayTeam(away_team){
