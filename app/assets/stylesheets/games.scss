@@ -2,8 +2,16 @@ $teal: rgb(68,150,139);
 $break-small: 320px;
 $break-large: 1200px;
 $pickem: #013369;
+
+$iphone-portrait: 320px;
+$iphone-landscape: 480px;
+$ipad-portrait: 768px;
+$ipad-landscape: 1024px;
+$desktop: 1224px;
+$desktop-large: 1824px;
+
 .logos {
-  height: 25px;
+  height: 60px;
   display: block;
   margin: 0 auto;
   @media screen and (max-width: 660px) {
@@ -11,28 +19,22 @@ $pickem: #013369;
          padding-right: 5px;
   }
 }
-
 #homeSpread{
   text-align: center;
-
 }
 .score {
   text-align: center;
   white-space: nowrap;
   height: 10px;
-
 }
 #awayLogo{
   padding-left: 20px;
 }
-
 .scoreTitle {
   // padding-left: 8px;
   text-align: center;
   white-space: nowrap;
-
 }
-
 .blankColumn{
   width: 30px;
 }
@@ -40,104 +42,169 @@ $pickem: #013369;
   top: 40px;
 }
 .card.weekly-picks-card {
-  //backup
-    // margin: 40px;
-
-    margin: 20px;
-    top: 60px;
-
-    .card-content {
-      padding: 0px;
-      border: 2px;
-      border-color: black !important;
-      font-size: 15px !important;
-
-        .homeSpead_th{
-          white-space: nowrap;
-        }
-        .title-row {
-            border-bottom: 1px solid lightgray;
-            height: 65px;
-            margin-bottom: 0px;
-            border-radius: 0px !important;
-            white-space: nowrap;
-
-            .card-title {
-                margin: 20px;
-                position: relative;
-                top: 10px;
-                height: 30px;
-            }
-        }
-        tr{
-          font-size: 15px;
-          @media screen and (max-width: 864px) {
-            font-size: 10px;
-          }
-          @media screen and (max-width: 660px) {
-            font-size: 8px !important;
-          }
-        }
-        td {
-          font-size: 15px;
-          border-radius: 0px !important;
-          @media screen and (max-width: 864px) {
-            font-size: 10px;
-            padding: 5px;
-          }
-          @media screen and (max-width: 660px) {
-
-            font-size: 8px !important;
-            white-space: none !important;
-            padding: 0;
-          }
-        }
-    }
-
-    .pick-active {
-        background: rgb(232,232,232); //grey
-    }
-    .pickWin {
-      border-width: 2px;
-      border-top: 5px;
-      color: green !important;
-    }
-    .team-selected {
-        color: $teal;
-        font-weight: 600;
-        border: 5px;
-    }
-    .select-team {
-        cursor: pointer;
-        white-space: nowrap;
-        text-align: left;
-    }
-    .game-icon {
-        font-size: 18px;
-        top: 2px;
-        position: relative;
-        margin-left: 10px;
-    }
-
-    .pick-win .game-icon {
-        color: #4caf50;
-    }
-
-    .pick-loss .game-icon {
-        color: #e53935;
-    }
-    #hidden10{
-      color: red;
-    }
-    .datePretty{
-      font-size: 15px;
-        @media screen and (min-width: 1085px) {
-               white-space: none !important;
-        }
-        @media screen and (max-width: 660px) {
-               font-size: 10px !important;
-               white-space: none !important;
-        }
-    }
-
+  margin: 20px;
+  top: 60px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.06), 0 2px 10px 0 rgba(0, 0, 0, 0.4);
+  position: absolute !important;
+  left: 170px;
 }
+.card-content {
+  padding: 0px !important;
+  border: 2px;
+  border-color: black !important;
+  overflow-y: scroll;
+}
+.card-title {
+    border-bottom: 1px solid #d0d0d0;
+    font-size: 20px;
+    height: 30px;
+    white-space: nowrap;
+  }
+  .homeSpead_th{
+    white-space: nowrap;
+  }
+  .title-row {
+      border-bottom: 1px solid lightgray;
+      margin-bottom: 0px;
+      border-radius: 0px !important;
+      white-space: nowrap;
+      font-size: 30px;
+      padding-left: 20px;
+      padding-top: 16px;
+
+  }
+  div.weekNumber {
+      margin: 20px !important;
+      position: fixed !important;
+      height: 30px !important;
+      text-align: left !important;
+      font-size: 30px !important;
+  }
+  .titleHeader{
+    font-size: 1.3vw !important;
+    width: 20px !important;
+    text-align: center !important;
+    margin-left: 20px;
+    // @media only screen and (max-width: 800px) {
+    //   font-size: 15px !important;
+    // }
+  }
+  #tableHeader_lock{
+    width: 74px !important;
+    @media only screen and (max-width: 800px) {
+      width: 45px !important;
+    }
+  }
+  #tableHeader_visitor{
+
+  }
+  #tableHeader_score{
+    text-align: right !important;
+    width: 65px !important;
+  }
+  #tableHeader_home{
+    left: 10px !important;
+    position: relative;
+  }
+  #tableHeader_HS{
+    text-align: left !important;
+    position: relative;
+    left: 2rem !important;
+    // @media only screen and (max-width: 1200px) {
+    //   left: 20px !important;
+    // }
+  }
+  #tableHeader_status{
+    text-align: left !important;
+  }
+  // new table header
+  .new-title-row{
+    position: relative;
+    display: inline-block;
+  }
+  .new-vistor{
+    position: relative;
+  }
+  .new-score{
+    position: relative;
+  }
+  .new-home{
+    position: relative;
+  }
+  .new-HS{
+    position: relative;
+  }
+  #tableBody{
+    display:block;
+    height: 75vh;
+    overflow:auto;
+  }
+thead, tbody tr {
+    display:table;
+    width:100%;
+    table-layout:fixed;
+    font-size: 15px;
+    @media screen and (max-width: 864px) {
+      font-size: 10px;
+    }
+    @media screen and (max-width: 660px) {
+      font-size: 8px !important;
+    }
+}
+thead {
+    width: calc( 100% - 1em )
+}
+table {
+    width:100%;
+    // height: 5em !important;
+}
+th{
+  text-align: center !important;
+}
+td {
+  font-size: 15px;
+  border-radius: 0px !important;
+}
+.pick-active {
+    background: rgb(232,232,232); //grey
+}
+.pickWin {
+  border-width: 2px;
+  border-top: 5px;
+  color: green !important;
+}
+.team-selected {
+    color: $teal;
+    font-weight: 600;
+    border: 5px;
+}
+.select-team {
+    cursor: pointer;
+    text-align: center;
+}
+.game-icon {
+    font-size: 18px;
+    top: 2px;
+    position: relative;
+    margin-left: 10px;
+}
+.pick-win .game-icon {
+    color: #4caf50;
+}
+.pick-loss .game-icon {
+    color: #e53935;
+}
+#hidden10{
+  color: red;
+}
+.datePretty{
+  // font-size: 2rem;
+    @media screen and (min-width: 1085px) {
+           white-space: none !important;
+    }
+    @media screen and (max-width: 660px) {
+           // font-size: 10px !important;
+           white-space: none !important;
+    }
+}
+//game.scss

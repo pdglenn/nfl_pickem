@@ -17,7 +17,10 @@ $pickem2: #000080;
 }
 
 .card.distribution-card {
-    margin: 40px;
+  margin: 40px;
+  position: absolute;
+  width: 89%;
+  left: 150px;
 }
 
 #user-picks-name {
@@ -43,9 +46,9 @@ $pickem2: #000080;
   cursor: pointer;
 }
 .curweek {
-    position: absolute;
-    top: 15px;
-    right: 190px;
-    z-index: 8;
-    cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 250px;
+  z-index: 8;
+  cursor: pointer;
 }
