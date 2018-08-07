@@ -42,8 +42,9 @@ $desktop-large: 1824px;
   top: 40px;
 }
 .card.weekly-picks-card {
-    margin: 20px;
-    top: 60px;
+  margin: 20px;
+  top: 60px;
+  left: 165px;
 }
 .card-content {
   padding: 0px !important;
@@ -84,48 +85,57 @@ $desktop-large: 1824px;
     width: 20px !important;
     text-align: center !important;
     margin-left: 20px;
+    @media only screen and (max-width: 800px) {
+      font-size: 15px !important;
+    }
   }
-#tableHeader{
+  #tableHeader_lock{
+    width: 74px !important;
+    @media only screen and (max-width: 800px) {
+      width: 45px !important;
+    }
+  }
+  #tableHeader_visitor{
 
-}
-#tableBody{
-  display:block;
-  height: 75vh;
-  overflow:auto;
-  // @media only screen //iphone portrait
-  // and (device-width: 375px)
-  // and (device-height : 667px)
-  // and (-webkit-device-pixel-ratio : 2) {
-  //     height: 98em;
-  // }
-  // @media only screen //iphone landscape
-  // and (device-width: 667px)
-  // and (device-height : 375px)
-  // and (-webkit-device-pixel-ratio : 2) {
-  //     height: 24em;
-  // }
-  // @media only screen //desktop laptop
-  // and (device-width: 667px)
-  // and (device-height : 375px)
-  // and (-webkit-device-pixel-ratio : 2) {
-  //     height: 24em;
-  // }
-  // @media only screen
-  // //desktop laptop fullscreen
-  // //height > 678
-  // and (min-height: 678px) {
-  //     height: 33em;
-  // }
-  // @media only screen //desktop height > 1000px
-  // and (min-height: 1000px) {
-  //     height: 56em;
-  // }
-  // @media only screen //desktop height > 1000px
-  // and (min-width: 378px)
-  // and (min-height: 1150px) {
-  //     height:69em;
-  // }
-}
+  }
+  #tableHeader_score{
+    text-align: right !important;
+    width: 65px !important;
+  }
+  #tableHeader_home{
+    left: 10px !important;
+    position: relative;
+  }
+  #tableHeader_HS{
+    text-align: left !important;
+    position: relative;
+    left: 20px !important;
+  }
+  #tableHeader_status{
+    text-align: left !important;
+  }
+  // new table header
+  .new-title-row{
+    position: relative;
+    display: inline-block;
+  }
+  .new-vistor{
+    position: relative;
+  }
+  .new-score{
+    position: relative;
+  }
+  .new-home{
+    position: relative;
+  }
+  .new-HS{
+    position: relative;
+  }
+  #tableBody{
+    display:block;
+    height: 75vh;
+    overflow:auto;
+  }
 thead, tbody tr {
     display:table;
     width:100%;

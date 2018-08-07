@@ -15,13 +15,12 @@ class Game extends React.Component {
               <td><i className="game-icon material-icons">{this.getIcon()}</i></td>
               <td id="awayTeam" className={this.getTeamSelectedClass(away_team.id) + " select-team"} data-team-id={away_team.id}>
                 <img src={away_team.logo_path} className="logos" />
-                 {away_team.name} ({away_team.wins}-{away_team.losses})
+                 {away_team.name} <br></br> ({away_team.wins}-{away_team.losses})
                </td>
-               {/* <td><a>t</a></td> */}
               <td className="score">{this.getScorePretty()}</td>
               <td id="homeTeam" className={this.getTeamSelectedClass(home_team.id) + " select-team"} data-team-id={home_team.id}>
                   <img src={home_team.logo_path} className="logos" />
-                 {home_team.name} ({home_team.wins}-{home_team.losses})
+                 {home_team.name} <br></br> ({home_team.wins}-{home_team.losses})
               </td>
               {/* <td><a data-target="modaxxl1" class="btn modal-trigger">t</a></td> */}
               <td id='homeSpread' className={this.getTeamSelectedClass(home_team.id)}> {this.getSpreadPretty(true)} </td>

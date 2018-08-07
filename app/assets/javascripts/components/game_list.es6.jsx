@@ -110,15 +110,14 @@ class GameList extends React.Component {
                       <br/>
                       <table>
                         <tbody id="tableHeader">
-                          <th className="titleHeader"></th>
-                          <th className="titleHeader">Visitor Team</th>
-                          <th className="titleHeader">Score</th>
-                          <th className="titleHeader">Home Team</th>
-                          <th className="titleHeader">Home Spread</th>
-                          <th className="titleHeader">Status</th>
+                          <th id="tableHeader_lock" className="titleHeader"></th>
+                          <th id="tableHeader_visitor" className="titleHeader">Visitor Team</th>
+                          <th id="tableHeader_score" className="titleHeader"></th>
+                          <th id="tableHeader_home" className="titleHeader">Home Team</th>
+                          <th id="tableHeader_HS" className="titleHeader">Home Spread</th>
+                          <th id="tableHeader_status" className="titleHeader">Status</th>
                         </tbody>
                       </table>
-
                   </div>
                   <div className="card-content">
                   <table className="bordered highlight">
