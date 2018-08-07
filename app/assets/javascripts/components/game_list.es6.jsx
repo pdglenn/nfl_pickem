@@ -4,7 +4,8 @@ class GameList extends React.Component {
         this.state = {picks: props.picks, games: props.games, week: props.week};
     }
 
-
+    componentDidMount() {
+    }
 
     addNewPick (new_pick) {
         // TODO: make this not hacky af
@@ -103,34 +104,42 @@ class GameList extends React.Component {
         });
 
         return (
-            <div className="card weekly-picks-card">
-                <div className="card-content">
-                    <div className="row title-row">
-                        <span className="card-title">Week {this.props.week} Picks</span>
-                    </div>
-
-
-
-                    <table className="bordered highlight">
-                        <tbody>
-                            <tr>
-                                <th data-id="locked"></th>
-                                <th className="homeSpead_th">Home Spread</th>
-                                  <th id='homeLogo'></th>
-                                <th>Home Team</th>
-                                <th className="scoreTitle">Score</th>
-                                  <th id='awayLogo'></th>
-                                <th>Visiting Team</th>
-                                <th>Status</th>
-                            </tr>
-                            {gameNodes}
+          <div className="card weekly-picks-card pinned">
+                  <div className="title-row">
+                      <span className="heading h1">Week {this.props.week} Picks</span>
+                      <br/>
+                      <table>
+                        <tbody id="tableHeader">
+                          <th id="tableHeader_lock" className="titleHeader"></th>
+                          <th id="tableHeader_visitor" className="titleHeader">Visitor Team</th>
+                          <th id="tableHeader_score" className="titleHeader"></th>
+                          <th id="tableHeader_home" className="titleHeader">Home Team</th>
+                          <th id="tableHeader_HS" className="titleHeader">Home Spread</th>
+                          <th id="tableHeader_status" className="titleHeader">Status</th>
                         </tbody>
-                    </table>
-                </div>
-            </div>
-
+                      </table>
+                  </div>
+                  <div className="card-content">
+                  <table className="bordered highlight">
+                    {/* <thead>
+                      <tr className="columnNames">
+                          <th data-id="locked"></th>
+                          <th>Visiting Team</th>
+                            <th className="scoreTitle">Score</th>
+                          <th>Home Team</th>
+                          <th className="homeSpead_th">Home Spread</th>
+                          <th>Status</th>
+                      </tr>
+                    </thead> */}
+                    <tbody id="tableBody">
+                          {gameNodes}
+                      </tbody>
+                  </table>
+              </div>
+          </div>
         );
     }
 
 
 }
+//game_list
